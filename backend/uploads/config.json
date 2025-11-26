@@ -1,0 +1,11 @@
+{
+    "dni_column": "DNI",
+    "date_column": "Fecha",
+    "visible_columns": [
+        "DNI",
+        "Nombre",
+        "Departamento",
+        "Ubicaci\u00f3n",
+        "Fecha"
+    ]
+}

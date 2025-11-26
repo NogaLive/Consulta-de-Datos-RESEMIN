@@ -1,0 +1,10 @@
+{
+    "admin": {
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$DnX/wP8H6+tX4wXq+YkZqQ$P/u3u+u3u+u3u+u3u+u3u+u3u+u3u+u3",
+        "role": "ADMIN"
+    },
+    "12345678": {
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$da71PmcsxbiXkhJCqBViLA$Ej2Dn9BWmvtKvqXMEQgEW8LfmIIZnQ1JyMHqEa6A2co",
+        "role": "ADMIN"
+    }
+}
