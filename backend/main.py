@@ -223,7 +223,7 @@ async def get_admin_user_detail(dni: str, user: dict = Depends(require_admin)):
     return clean_record
 
 @app.post("/api/query/user")
-@limiter.limit("5/minute")
+@limiter.limit("20/minute")
 async def query_user_data(request: Request, query: UserQuery):
     if global_df is None or global_df.empty: 
         raise HTTPException(status_code=503, detail="El sistema está en mantenimiento (Base de datos no cargada).")
