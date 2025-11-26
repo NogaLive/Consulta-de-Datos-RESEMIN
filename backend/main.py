@@ -26,8 +26,15 @@ USERS_FILE = os.path.join(UPLOAD_DIR, "users.json")
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-limiter = Limiter(key_func=get_remote_address)
-app = FastAPI(title="Consulta de Datos RESEMIN", version="3.1.0") # Versión actualizada
+def get_real_user_ip(request: Request):
+    forwarded = request.headers.get("X-Forwarded-For")
+    if forwarded:
+        return forwarded.split(",")[0]
+    return request.client.host
+
+limiter = Limiter(key_func=get_real_user_ip)
+
+app = FastAPI(title="Consulta de Datos RESEMIN", version="3.2.0")
 
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
